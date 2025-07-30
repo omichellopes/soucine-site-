@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soucine TV - Filmes, Esportes, Séries e Lutas em Qualidade Premium</title>
+    <meta name="description" content="Tenha acesso a mais de 10 mil conteúdos em qualidade HD e 4K. Filmes, séries, esportes ao vivo e lutas exclusivas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Colors */
+            --primary-red: #FF0000;
+            --primary-red-dark: #CC0000;
+            --primary-red-light: #FF3333;
+            --secondary-green: #00FF00;
+            --secondary-green-dark: #00CC00;
+            
+            /* Neutrals */
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --black: #000000;
+            
+            /* Background overlays */
+            --bg-overlay-light: rgba(0, 0, 0, 0.4);
+            --bg-overlay-medium: rgba(0, 0, 0, 0.6);
+            --bg-overlay-dark: rgba(0, 0, 0, 0.8);
+            --bg-overlay-darker: rgba(0, 0, 0, 0.9);
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            
+            /* Border radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-red: 0 10px 30px rgba(255, 0, 0, 0.3);
+            --shadow-red-lg: 0 20px 40px rgba(255, 0, 0, 0.4);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease-out;
+            --transition-base: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-2XdtB6hJyWoqzZHvbob3PMo8eJw4QP.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 400;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-overlay-medium);
+            z-index: -1;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-8);
+        }
+
+        .section {
+            padding: var(--space-20) 0;
+            position: relative;
+        }
+
+        .section-bg {
+            background: var(--bg-overlay-dark);
+            backdrop-filter: blur(10px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typography */
+        .heading-1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+
+        .heading-2 {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        .heading-3 {
+            font-size: var(--font-size-3xl);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .heading-4 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .text-lg {
+            font-size: var(--font-size-lg);
+            line-height: 1.6;
+        }
+
+        .text-xl {
+            font-size: var(--font-size-xl);
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4) var(--space-8);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            font-size: var(--font-size-base);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+            color: var(--white);
+            box-shadow: var(--shadow-red);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-red-dark), #990000);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-red-lg);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-red);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: var(--space-5) var(--space-10);
+            font-size: var(--font-size-lg);
+            border-radius: var(--radius-xl);
+        }
+
+        .btn-sm {
+            padding: var(--space-3) var(--space-6);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-2xl);
+            transition: all var(--transition-base);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: var(--space-4) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-base);
+        }
+
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.98);
+            padding: var(--space-3) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 45px;
+            width: auto;
+            transition: all var(--transition-base);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-8);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--font-size-base);
+            position: relative;
+            transition: all var(--transition-base);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width var(--transition-base);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        .search-icon {
+            color: var(--white);
+            font-size: var(--font-size-xl);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            padding: var(--space-2);
+            border-radius: var(--radius-md);
+        }
+
+        .search-icon:hover {
+            color: var(--primary-red);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: var(--font-size-2xl);
+            cursor: pointer;
+            padding: var(--space-2);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            margin-bottom: var(--space-6);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            color: var(--primary-red);
+            margin-bottom: var(--space-8);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(255, 0, 0, 0.3));
+            transition: all var(--transition-slow);
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Video Demo Section */
+        .video-demo {
+            text-align: center;
+        }
+
+        .video-demo-title {
+            margin-bottom: var(--space-6);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .video-demo-subtitle {
+            color: var(--gray-300);
+            margin-bottom: var(--space-12);
+            opacity: 0.9;
+        }
+
+        .video-container {
+            margin: var(--space-12) 0;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            display: inline-block;
+        }
+
+        .demo-video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            min-height: 400px;
+            border-radius: var(--radius-2xl);
+            aspect-ratio: 9/16;
+        }
+
+        .video-bottom-text {
+            margin-top: var(--space-12);
+        }
+
+        .highlight-text {
+            color: var(--primary-red);
+            font-size: var(--font-size-5xl);
+            display: block;
+            margin-top: var(--space-2);
+            font-weight: 800;
+        }
+
+        /* Content Section */
+        .content-grid {
+            display: grid;
+            gap: var(--space-20);
+        }
+
+        .content-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
+
+        .content-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-row:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .content-text {
+            max-width: 500px;
+        }
+
+        .content-title {
+            margin-bottom: var(--space-6);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .content-description {
+            color: var(--gray-300);
+        }
+
+        .content-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .content-image img {
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            min-height: 450px;
+            object-fit: contain;
+            border-radius: var(--radius-2xl);
+            border: 3px solid var(--primary-red);
+            box-shadow: var(--shadow-2xl);
+            background: rgba(0, 0, 0, 0.9);
+            transition: all var(--transition-base);
+        }
+
+        .content-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Price Comparison */
+        .price-comparison {
+            text-align: center;
+        }
+
+        .comparison-subtitle {
+            color: var(--gray-300);
+            margin-bottom: var(--space-12);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-16);
+        }
+
+        .platform-card {
+            background: rgba(26, 26, 26, 0.95);
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-base);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .platform-card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-red);
+        }
+
+        .platform-logo {
+            width: 80px;
+            height: 45px;
+            object-fit: contain;
+            margin-bottom: var(--space-4);
+            border-radius: var(--radius-md);
+        }
+
+        .platform-name {
+            color: var(--white);
+            font-size: var(--font-size-base);
+            margin-bottom: var(--space-2);
+            font-weight: 600;
+        }
+
+        .platform-price {
+            font-size: var(--font-size-2xl);
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+
+        .platform-price span {
+            font-size: var(--font-size-sm);
+            color: var(--gray-400);
+        }
+
+        .platform-description {
+            color: var(--gray-400);
+            font-size: var(--font-size-sm);
+            font-style: italic;
+        }
+
+        .comparison-vs {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: var(--space-8);
+            align-items: center;
+            margin: var(--space-12) 0;
+            padding: var(--space-10);
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: var(--radius-2xl);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .comparison-total {
+            text-align: center;
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(20px);
+        }
+
+        .comparison-others {
+            background: rgba(45, 27, 27, 0.9);
+            border: 2px solid #FF4444;
+        }
+
+        .comparison-soucine {
+            background: rgba(27, 45, 27, 0.9);
+            border: 2px solid var(--secondary-green);
+        }
+
+        .vs-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+            border-radius: var(--radius-full);
+            color: var(--white);
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            box-shadow: var(--shadow-red);
+        }
+
+        .savings-banner {
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.95), rgba(153, 27, 27, 0.95));
+            border-radius: var(--radius-2xl);
+            padding: var(--space-12);
+            text-align: center;
+            color: var(--white);
+            box-shadow: var(--shadow-2xl);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .savings-examples {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+            margin: var(--space-6) 0;
+        }
+
+        .savings-examples span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Plans Section */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+        }
+
+        .plan-card {
+            position: relative;
+            transition: all var(--transition-base);
+        }
+
+        .plan-card.featured {
+            transform: scale(1.05);
+            border-color: var(--primary-red);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .plan-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            right: var(--space-6);
+            background: var(--primary-red);
+            color: var(--white);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .plan-name {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-4);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .plan-price {
+            font-size: var(--font-size-5xl);
+            color: var(--primary-red);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: var(--space-8);
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-300);
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-right: var(--space-3);
+            font-size: var(--font-size-lg);
+        }
+
+        /* Trial Section */
+        .trial-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
+
+        .trial-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            filter: drop-shadow(0 20px 40px rgba(255, 0, 0, 0.3));
+            transition: all var(--transition-base);
+        }
+
+        .trial-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .trial-title {
+            margin-bottom: var(--space-4);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .trial-subtitle {
+            color: var(--gray-300);
+            margin-bottom: var(--space-6);
+            opacity: 0.9;
+        }
+
+        .trial-description {
+            color: var(--gray-300);
+            margin-bottom: var(--space-8);
+        }
+
+        .trial-benefits {
+            list-style: none;
+            margin-bottom: var(--space-10);
+        }
+
+        .trial-benefits li {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-4);
+            color: var(--gray-300);
+        }
+
+        .trial-benefits li::before {
+            content: '✓';
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: var(--font-size-xl);
+            margin-right: var(--space-4);
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Advantages Section */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-6);
+            padding: var(--space-8);
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: var(--radius-xl);
+            border-left: 4px solid var(--primary-red);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .advantage-icon {
+            font-size: var(--font-size-3xl);
+            color: var(--primary-red);
+            flex-shrink: 0;
+        }
+
+        .advantage-content h3 {
+            color: var(--white);
+            margin-bottom: var(--space-2);
+            font-weight: 600;
+        }
+
+        .advantage-content p {
+            color: var(--gray-300);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            overflow: hidden;
+        }
+
+        .feedback-carousel-container {
+            margin: var(--space-12) 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feedback-carousel {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            gap: var(--space-8);
+        }
+
+        .feedback-item {
+            flex-shrink: 0;
+            width: 300px;
+            height: 600px;
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            transition: all var(--transition-base);
+        }
+
+        .feedback-item:hover {
+            transform: scale(1.05);
+        }
+
+        .feedback-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all var(--transition-base);
+        }
+
+        .feedback-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-16);
+            padding: var(--space-8);
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: var(--radius-2xl);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stats-item {
+            text-align: center;
+            padding: var(--space-4);
+        }
+
+        .stats-number {
+            display: block;
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: var(--space-2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .stats-label {
+            display: block;
+            font-size: var(--font-size-base);
+            color: var(--gray-300);
+            font-weight: 500;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .feedback-carousel-container:hover .feedback-carousel {
+            animation-play-state: paused;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: var(--space-4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .faq-question {
+            background: transparent;
+            padding: var(--space-6);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition-base);
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .faq-question:hover {
+            background: rgba(34, 34, 34, 0.9);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-6);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-base);
+            background: rgba(10, 10, 10, 0.9);
+            color: var(--gray-300);
+        }
+
+        .faq-answer.active {
+            padding: var(--space-6);
+            max-height: 200px;
+        }
+
+        .faq-toggle {
+            color: var(--primary-red);
+            font-size: var(--font-size-2xl);
+            transition: transform var(--transition-base);
+            font-weight: 300;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(45deg);
+        }
+
+        .faq-support {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+            padding: var(--space-8);
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .support-section {
+            text-align: center;
+        }
+
+        .support-title {
+            font-size: var(--font-size-xl);
+            color: var(--white);
+            margin-bottom: var(--space-6);
+            font-weight: 500;
+        }
+
+        .payment-methods img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.98);
+            padding: var(--space-12) 0 var(--space-4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-8);
+        }
+
+        .footer-section h3 {
+            color: var(--primary-red);
+            margin-bottom: var(--space-4);
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            color: var(--gray-300);
+            text-decoration: none;
+            display: block;
+            margin-bottom: var(--space-2);
+            transition: color var(--transition-base);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-section p {
+            color: var(--gray-300);
+            line-height: 1.6;
+        }
+
+        /* Site Seguro Section */
+        .site-seguro {
+            text-align: center;
+            margin: var(--space-8) 0;
+            padding: var(--space-6);
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .site-seguro h3 {
+            color: var(--white);
+            margin-bottom: var(--space-4);
+            font-weight: 600;
+            font-size: var(--font-size-xl);
+        }
+
+        .site-seguro img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-500);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: var(--font-size-2xl);
+            box-shadow: var(--shadow-red);
+            z-index: 1000;
+            transition: all var(--transition-base);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-red-lg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 var(--space-6);
+            }
+            
+            .hero-container,
+            .content-row,
+            .trial-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-12);
+                text-align: center;
+            }
+            
+            .content-row:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Hero adjustments for mobile */
+            .hero {
+                min-height: 100vh;
+                padding: var(--space-20) 0 var(--space-16);
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 2;
+                max-width: 100%;
+            }
+
+            .hero-title {
+                font-size: var(--font-size-2xl);
+                line-height: 1.2;
+                margin-bottom: var(--space-4);
+                padding: 0 var(--space-2);
+            }
+
+            .hero-subtitle {
+                font-size: var(--font-size-base);
+                line-height: 1.5;
+                margin-bottom: var(--space-6);
+                padding: 0 var(--space-2);
+            }
+
+            .hero-image {
+                order: 1;
+                margin-bottom: var(--space-4);
+            }
+
+            .hero-image img {
+                max-width: 80%;
+                height: auto;
+                max-height: 280px;
+                object-fit: contain;
+            }
+
+            .btn-lg {
+                padding: var(--space-4) var(--space-6);
+                font-size: var(--font-size-base);
+                width: auto;
+                max-width: 280px;
+            }
+
+            .container {
+                padding: 0 var(--space-4);
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: var(--space-6);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                gap: var(--space-4);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-actions .search-icon {
+                display: none;
+            }
+
+            .heading-1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .heading-2 {
+                font-size: var(--font-size-2xl);
+            }
+
+            .section {
+                padding: var(--space-16) 0;
+            }
+
+            .platforms-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: var(--space-4);
+            }
+
+            .comparison-vs {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+
+            .vs-divider {
+                width: 50px;
+                height: 50px;
+                font-size: var(--font-size-base);
+                margin: 0 auto;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-card.featured {
+                transform: none;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advantage-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .faq-support {
+                grid-template-columns: 1fr;
+            }
+
+            .feedback-item {
+                width: 250px;
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Hero adjustments for mobile */
+            .hero {
+                min-height: 100vh;
+                padding: var(--space-16) 0 var(--space-12);
+            }
+
+            .hero-container {
+                gap: var(--space-6);
+            }
+
+            .hero-title {
+                font-size: var(--font-size-xl);
+                line-height: 1.3;
+                margin-bottom: var(--space-3);
+            }
+
+            .hero-subtitle {
+                font-size: var(--font-size-sm);
+                line-height: 1.4;
+                margin-bottom: var(--space-5);
+            }
+
+            .hero-image img {
+                max-width: 75%;
+                max-height: 240px;
+            }
+
+            .btn-lg {
+                padding: var(--space-3) var(--space-5);
+                font-size: var(--font-size-sm);
+                max-width: 260px;
+            }
+
+            .container {
+                padding: 0 var(--space-3);
+            }
+
+            .container {
+                padding: 0 var(--space-4);
+            }
+
+            .heading-1 {
+                font-size: var(--font-size-2xl);
+            }
+
+            .btn-lg {
+                padding: var(--space-4) var(--space-6);
+                font-size: var(--font-size-base);
+            }
+
+            .content-image img {
+                min-height: 250px;
+            }
+
+            .feedback-item {
+                width: 200px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: var(--font-size-lg);
+                line-height: 1.3;
+            }
+
+            .hero-subtitle {
+                font-size: var(--font-size-xs);
+                line-height: 1.4;
+            }
+
+            .hero-image img {
+                max-width: 70%;
+                max-height: 200px;
+            }
+
+            .btn-lg {
+                padding: var(--space-3) var(--space-4);
+                font-size: var(--font-size-xs);
+                max-width: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <div class="nav-brand">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202025-06-14%20150428-mcwolnrrO8lfRc8YM30RT9cI74oVFg.png" alt="Soucine TV" class="logo">
+                </div>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#conteudos">Conteúdos</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <span class="search-icon">🔍</span>
+                    <a href="#planos" class="btn btn-primary btn-sm">Assine Já</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="inicio">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content fade-in-up">
+                    <h1 class="hero-title heading-1">TÁ COLECIONANDO ASSINATURA OU QUERENDO VER FILME?</h1>
+                    <p class="hero-subtitle text-xl">Tenha acesso a diversos conteúdos como: canais abertos e fechados, netflix, amazon prime, disney+, hbo max, globoplay e muito mais!! Direto da sua TV ou celular.</p>
+                    <a href="#planos" class="btn btn-primary btn-lg">Quero Acessar Agora →</a>
+                </div>
+                <div class="hero-image fade-in-up">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20250725_1630_Personagem_Soucine_no_Sof%C3%A1_remix_01k11gwxh5fsb9bqb6gkr8sph6-Photoroom-removebg-preview-zkwN1zJUSc8BybBcvbalMIGnpTCycu.png" alt="Personagem Soucine TV relaxando no sofá com controle remoto, óculos 3D e pipoca - a experiência completa de streaming">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="section section-bg">
+        <div class="container">
+            <div class="video-demo text-center">
+                <h2 class="video-demo-title heading-2">DESCUBRA UMA NOVA FORMA DE VER TV!</h2>
+                <p class="video-demo-subtitle text-xl">Assista o vídeo abaixo e veja como funciona</p>
+                
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/mszTP3cyHMw"
+                        title="Conheça tudo que podemos te oferecer - Soucine TV"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="demo-video"
+                    ></iframe>
+                </div>
+                
+                <div class="video-bottom-text">
+                    <h3 class="heading-2">Todos os streamings<span class="highlight-text">PELO PREÇO DE UM</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="section section-bg" id="conteudos">
+        <div class="container">
+            <h2 class="heading-2 text-center" style="margin-bottom: var(--space-16);">O Que Você Vai Assistir</h2>
+            
+            <div class="content-grid">
+                <!-- Filmes e Séries -->
+                <div class="content-row fade-in-up">
+                    <div class="content-text">
+                        <h3 class="content-title heading-3">Filmes e Séries 🎬</h3>
+                        <p class="content-description text-lg">Catálogo sempre atualizado com os últimos lançamentos e clássicos do cinema mundial, incluindo Netflix, Amazon Prime, HBO Max e muito mais!</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Filmes-DyUZJmCVYQuoq4qhUuQPhTSUM1tbpy.png" alt="Interface Soucine TV - Filmes e Séries com lançamentos recentes">
+                    </div>
+                </div>
+                
+                <!-- Esportes -->
+                <div class="content-row fade-in-up">
+                    <div class="content-text">
+                        <h3 class="content-title heading-3">Esportes ⚽</h3>
+                        <p class="content-description text-lg">Prepare-se para ter literalmente todos os acessos dos canais de esporte, futebol, artes marciais e muito mais!</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/esportes-9khKp0FKaYRHsX2OnvEpOTSTTzmdrb.png" alt="Interface Soucine TV - Canais de Esporte com programação ao vivo">
+                    </div>
+                </div>
+                
+                <!-- Canais Infantis -->
+                <div class="content-row fade-in-up">
+                    <div class="content-text">
+                        <h3 class="content-title heading-3">Canais Infantis 👶</h3>
+                        <p class="content-description text-lg">Toda a lista para a criançada se divertir além de disney plus e muito mais!</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/com.xcloud.app_Screenshot_2025.07.29_13.55.52-T1y7x66yD8m35f6j44bsCUoBjmw6QQ.png" alt="Interface Soucine TV - Canais Infantis com Galinha Pintadinha, desenhos e conteúdo para crianças">
+                    </div>
+                </div>
+                
+                <!-- Canais ao Vivo -->
+                <div class="content-row fade-in-up">
+                    <div class="content-text">
+                        <h3 class="content-title heading-3">Canais ao Vivo 📺</h3>
+                        <p class="content-description text-lg">Interface completa com canais organizados por categoria, guia de programação e transmissão em tempo real.</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tvaovivo-Ty0cEbucAXhKUKxglqMEE24Ax6S4AG.png" alt="Interface principal Soucine TV com categorias TV ao vivo, Filmes e Séries">
+                    </div>
+                </div>
+                
+                <!-- Lutas e Pay-per-view -->
+                <div class="content-row fade-in-up">
+                    <div class="content-text">
+                        <h3 class="content-title heading-3">Lutas e Pay-per-view 🥊</h3>
+                        <p class="content-description text-lg">UFC, Boxe e outras modalidades de luta com transmissões exclusivas e de alta qualidade.</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/payperview-DPAkg7zYsz2QC0Twebr8PaPdIndwPH.png" alt="Interface Soucine TV - Canais Pay-per-view com CazeTV e DAZN">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Comparison Section -->
+    <section class="section section-bg">
+        <div class="container">
+            <div class="price-comparison">
+                <h2 class="heading-2 text-center" style="margin-bottom: var(--space-6);">🤑 PARE DE JOGAR DINHEIRO FORA!</h2>
+                <p class="comparison-subtitle text-lg">Veja quanto você gastaria assinando cada plataforma separadamente:</p>
+                
+                <div class="platforms-grid">
+                    <div class="platform-card fade-in-up">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ZeSBwASWVd3XKlHr0fv7YJUsk0v59z.png" alt="Netflix" class="platform-logo">
+                        <h4 class="platform-name">Netflix</h4>
+                        <div class="platform-price">R$ 55,90<span>/mês</span></div>
+                        <p class="platform-description">Só filmes e séries</p>
+                    </div>
+                    
+                    <div class="platform-card fade-in-up">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-SAu8NmI4WiTUzcHO0pSNQBB51hOH6l.png" alt="Prime Video" class="platform-logo">
+                        <h4 class="platform-name">Prime Video</h4>
+                        <div class="platform-price">R$ 19,90<span>/mês</span></div>
+                        <p class="platform-description">Catálogo limitado</p>
+                    </div>
+                    
+                    <div class="platform-card fade-in-up">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uCgBd1mmgAKfhX09HxS3zRkfNh9pyq.png" alt="Disney+" class="platform-logo">
+                        <h4 class="platform-name">Disney+</h4>
+                        <div class="platform-price">R$ 33,90<span>/mês</span></div>
+                        <p class="platform-description">Só Disney</p>
+                    </div>
+                    
+                    <div class="platform-card fade-in-up">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-SRbJlHsYessJrmpC324oMTa7rsRNR6.png" alt="HBO Max" class="platform-logo">
+                        <h4 class="platform-name">HBO Max</h4>
+                        <div class="platform-price">R$ 34,90<span>/mês</span></div>
+                        <p class="platform-description">Só HBO</p>
+                    </div>
+                    
+                    <div class="platform-card fade-in-up">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RMDWnKBGeKEQzhLpxwGJH2svsgpZi2.png" alt="Globoplay" class="platform-logo">
+                        <h4 class="platform-name">Globoplay</h4>
+                        <div class="platform-price">R$ 24,90<span>/mês</span></div>
+                        <p class="platform-description">Só nacional</p>
+                    </div>
+                    
+                    <div class="platform-card fade-in-up">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ruixiqLeBxCsv5sbKhGTgjwENZv5MJ.png" alt="Paramount+" class="platform-logo">
+                        <h4 class="platform-name">Paramount+</h4>
+                        <div class="platform-price">R$ 19,90<span>/mês</span></div>
+                        <p class="platform-description">Catálogo pequeno</p>
+                    </div>
+                </div>
+                
+                <div class="comparison-vs">
+                    <div class="comparison-total comparison-others">
+                        <div class="heading-4" style="margin-bottom: var(--space-4);">💸 TODAS JUNTAS:</div>
+                        <div class="heading-1" style="color: #FF4444; margin-bottom: var(--space-2);">R$ 189,40<span style="font-size: var(--font-size-base);">/mês</span></div>
+                        <div style="color: #FF6666; margin-bottom: var(--space-4);">R$ 2.272,80 por ano</div>
+                        <div>
+                            <p style="margin-bottom: var(--space-2); font-weight: 600;">E ainda faltaria:</p>
+                            <div style="display: flex; flex-direction: column; gap: var(--space-1);">
+                                <span style="font-size: var(--font-size-sm);">❌ TV ao vivo</span>
+                                <span style="font-size: var(--font-size-sm);">❌ Esportes</span>
+                                <span style="font-size: var(--font-size-sm);">❌ Lutas UFC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vs-divider">VS</div>
+                    
+                    <div class="comparison-total comparison-soucine">
+                        <div class="heading-4" style="margin-bottom: var(--space-4);">🎯 SOUCINE TV:</div>
+                        <div class="heading-1" style="color: var(--secondary-green); margin-bottom: var(--space-2);">R$ 34,90<span style="font-size: var(--font-size-base);">/mês</span></div>
+                        <div style="color: #66FF66; margin-bottom: var(--space-4);">R$ 418,80 por ano</div>
+                        <div>
+                            <p style="margin-bottom: var(--space-2); font-weight: 600;">Você tem TUDO:</p>
+                            <div style="display: flex; flex-direction: column; gap: var(--space-1);">
+                                <span style="font-size: var(--font-size-sm);">✅ Todas as plataformas</span>
+                                <span style="font-size: var(--font-size-sm);">✅ TV ao vivo</span>
+                                <span style="font-size: var(--font-size-sm);">✅ Esportes + UFC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="savings-banner">
+                    <h3 class="heading-3" style="margin-bottom: var(--space-4);">🚀 ECONOMIA INSANA: R$ 154,50 POR MÊS!</h3>
+                    <p class="text-lg" style="margin-bottom: var(--space-6);">São <strong>R$ 1.854,00 por ano</strong> que ficam no seu bolso!</p>
+                    <div class="savings-examples">
+                        <span>🏖️ Viagem</span>
+                        <span>🚗 Carro</span>
+                        <span>🏠 Casa</span>
+                        <span>💰 Poupança</span>
+                    </div>
+                    <a href="#planos" class="btn btn-secondary btn-lg">QUERO ECONOMIZAR AGORA! 💸</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="section section-bg" id="planos">
+        <div class="container">
+            <h2 class="heading-2 text-center" style="margin-bottom: var(--space-16);">Planos que cabem no seu bolso</h2>
+            <div class="plans-grid">
+                <!-- Trimestral -->
+                <div class="plan-card card fade-in-up">
+                    <h3 class="plan-name">Trimestral</h3>
+                    <div class="plan-price">R$79,90</div>
+                    <ul class="plan-features">
+                        <li>+ de 10 mil conteúdos</li>
+                        <li>Qualidade Full HD e 4K</li>
+                        <li>Suporte rápido</li>
+                        <li>Acesso imediato</li>
+                        <li>Compatível com todos os dispositivos</li>
+                        <li>Economia de R$25</li>
+                        <li>Assista em 1 tela simultânea</li>
+                        <li>Mais telas a consultar o valor</li>
+                    </ul>
+                    <a href="https://pay.kirvano.com/67feb553-8847-44e1-b62e-55b5643502e8" class="btn btn-primary">Assinar Agora</a>
+                </div>
+                
+                <!-- Mensal - Mais Popular -->
+                <div class="plan-card card featured fade-in-up">
+                    <div class="plan-badge">Mais Popular</div>
+                    <h3 class="plan-name">Mensal</h3>
+                    <div class="plan-price">R$34,90</div>
+                    <ul class="plan-features">
+                        <li>+ de 10 mil conteúdos</li>
+                        <li>Qualidade Full HD e 4K</li>
+                        <li>Suporte rápido</li>
+                        <li>Acesso imediato</li>
+                        <li>Compatível com todos os dispositivos</li>
+                        <li>Assista em 1 tela simultânea</li>
+                        <li>Mais telas a consultar o valor</li>
+                    </ul>
+                    <a href="https://pay.kirvano.com/81d7493f-0517-4251-82c8-6169e255aa9b" class="btn btn-primary">Assinar Agora</a>
+                </div>
+                
+                <!-- Semestral -->
+                <div class="plan-card card fade-in-up">
+                    <h3 class="plan-name">Semestral</h3>
+                    <div class="plan-price">R$149,90</div>
+                    <ul class="plan-features">
+                        <li>+ de 10 mil conteúdos</li>
+                        <li>Qualidade Full HD e 4K</li>
+                        <li>Suporte rápido</li>
+                        <li>Acesso imediato</li>
+                        <li>Compatível com todos os dispositivos</li>
+                        <li>Economia de R$60</li>
+                        <li>Assista em 1 tela simultânea</li>
+                        <li>Mais telas a consultar o valor</li>
+                    </ul>
+                    <a href="https://pay.kirvano.com/40ed8140-28d6-461e-bc85-08eda3c6a08b" class="btn btn-primary">Assinar Agora</a>
+                </div>
+                
+                <!-- Anual -->
+                <div class="plan-card card fade-in-up">
+                    <h3 class="plan-name">Anual</h3>
+                    <div class="plan-price">R$259,90</div>
+                    <ul class="plan-features">
+                        <li>+ de 10 mil conteúdos</li>
+                        <li>Qualidade Full HD e 4K</li>
+                        <li>Suporte rápido</li>
+                        <li>Acesso imediato</li>
+                        <li>Compatível com todos os dispositivos</li>
+                        <li>Economia de R$160</li>
+                        <li>Suporte prioritário</li>
+                        <li>Assista em 1 tela simultânea</li>
+                        <li>Mais telas a consultar o valor</li>
+                    </ul>
+                    <a href="https://pay.kirvano.com/b4a1d81a-8c55-4de5-bee0-a1e9d40f7dc2" class="btn btn-primary">Assinar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Trial Section -->
+    <section class="section section-bg">
+        <div class="container">
+            <div class="trial-container">
+                <div class="trial-image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20250725_1908_Her%C3%B3i%20da%20Divers%C3%A3o%20Soucine_remix_01k11szxmhfr9sxhn1nfht8jz0-WH4CH1ReXwksYR0Fp2bLZI321ZQyOc.png" alt="Personagem Soucine com controle remoto e celular - Missão Teste Grátis Ativado">
+                </div>
+                
+                <div class="trial-content">
+                    <h2 class="trial-title heading-1">🎁 Teste Grátis!</h2>
+                    <p class="trial-subtitle text-xl">Sinta a experiência completa antes de assinar.</p>
+                    <p class="trial-description text-lg">Explore filmes, séries, futebol, UFC e muito mais com qualidade HD — sem compromisso. A melhor forma de decidir é testando!</p>
+                    
+                    <ul class="trial-benefits">
+                        <li class="text-lg">Sem compromisso</li>
+                        <li class="text-lg">Sem cartão de crédito</li>
+                        <li class="text-lg">Funciona em qualquer dispositivo</li>
+                    </ul>
+                    
+                    <a href="https://w.app/becdpk" class="btn btn-primary btn-lg">QUERO MEU TESTE GRÁTIS AGORA!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section section-bg" id="vantagens">
+        <div class="container">
+            <h2 class="heading-2 text-center" style="margin-bottom: var(--space-16);">Vantagens Exclusivas</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item fade-in-up">
+                    <span class="advantage-icon">⚡</span>
+                    <div class="advantage-content">
+                        <h3 class="heading-4">Acesso Imediato</h3>
+                        <p>Comece a assistir em segundos após a confirmação do pagamento</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-item fade-in-up">
+                    <span class="advantage-icon">📱</span>
+                    <div class="advantage-content">
+                        <h3 class="heading-4">Compatível com Tudo</h3>
+                        <p>Smart TV, celular, PC, tablet - assista onde e quando quiser</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-item fade-in-up">
+                    <span class="advantage-icon">🎯</span>
+                    <div class="advantage-content">
+                        <h3 class="heading-4">Qualidade Premium</h3>
+                        <p>Imagem em Full HD e 4K para a melhor experiência visual</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-item fade-in-up">
+                    <span class="advantage-icon">🤝</span>
+                    <div class="advantage-content">
+                        <h3 class="heading-4">Suporte Humanizado</h3>
+                        <p>Atendimento rápido e eficiente via WhatsApp</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-item fade-in-up">
+                    <span class="advantage-icon">🔄</span>
+                    <div class="advantage-content">
+                        <h3 class="heading-4">Sempre Atualizado</h3>
+                        <p>Novos conteúdos adicionados semanalmente</p>
+                    </div>
+                </div>
+                
+                <div class="advantage-item fade-in-up">
+                    <span class="advantage-icon">🔒</span>
+                    <div class="advantage-content">
+                        <h3 class="heading-4">Seguro e Confiável</h3>
+                        <p>Serviço estável com alta disponibilidade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-bg">
+        <div class="container">
+            <div class="testimonials">
+                <h2 class="heading-2 text-center" style="margin-bottom: var(--space-16);">O que nossos clientes dizem</h2>
+                
+                <!-- Feedback Carousel -->
+                <div class="feedback-carousel-container">
+                    <div class="feedback-carousel">
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%284%29-hhKch0CjRkTihc8NgxPK1Rw4Jff0rf.png" alt="Feedback Carlos Eduardo" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%289%29-TIJoQtBBKdXJLrMykqiQcVHUKCaNc3.png" alt="Feedback Marcelo" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%285%29-n5am7o0QTchLy3bFIvzCHjFTn7rNay.png" alt="Feedback Bruno" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%286%29-zez9DiclE115ombmGoUumUdWMyNRbf.png" alt="Feedback Estefano" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%287%29-tZhZkVl0OWx8bCYSIb5tXCuTd6rqJi.png" alt="Feedback Rodrigo" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%288%29-JvtgdDWR0FT4w3qiPHtatkZTjqCBqV.png" alt="Feedback Wesley Carneiro" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%282%29-xYacppFPaxH0aVpBqLFxRvMhQeMw0U.png" alt="Feedback Luiz Carlos" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%283%29-wJtFCa4wnozde0OtV0rVS25xQkwK6A.png" alt="Feedback Palloma" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK-5r3z16K5h0qpmQVhotTruQSNn97V4C.png" alt="Feedback Moises" class="feedback-image">
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%284%29-hhKch0CjRkTihc8NgxPK1Rw4Jff0rf.png" alt="Feedback Carlos Eduardo" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%289%29-TIJoQtBBKdXJLrMykqiQcVHUKCaNc3.png" alt="Feedback Marcelo" class="feedback-image">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FEEDBACK%20%285%29-n5am7o0QTchLy3bFIvzCHjFTn7rNay.png" alt="Feedback Bruno" class="feedback-image">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="feedback-stats">
+                    <div class="stats-item">
+                        <span class="stats-number">15000+</span>
+                        <span class="stats-label">Clientes Satisfeitos</span>
+                    </div>
+                    <div class="stats-item">
+                        <span class="stats-number">4.9★</span>
+                        <span class="stats-label">Avaliação Média</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-bg" id="faq">
+        <div class="container">
+            <h2 class="heading-2 text-center" style="margin-bottom: var(--space-16);">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>É fácil de instalar?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Enviamos um tutorial completo e oferecemos suporte para instalação. É muito simples e rápido.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Quais dispositivos são compatíveis?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Funciona em Smart TV, Android, iOS, PC, notebook, tablet e TV Box. Praticamente todos os dispositivos!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Tem fidelidade?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não! Você pode cancelar quando quiser, sem multas ou taxas adicionais.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>O acesso é imediato?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Após a confirmação do pagamento, você recebe os dados de acesso em até 5 minutos.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso cancelar quando quiser?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Claro! Não há fidelidade. Você pode cancelar a qualquer momento pelo WhatsApp.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso assistir em mais de uma tela?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode configurar seu login em diversos dispositivos, porém não poderá ver simultaneamente em duas telas sem adquirir o ponto extra. Adquira o ponto extra para ver em mais telas ao mesmo tempo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-support">
+                <!-- Formas de Pagamento -->
+                <div class="support-section">
+                    <h3 class="support-title">Formas de pagamentos</h3>
+                    <div class="payment-methods">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-iOERYaNtB3k8XUt1Yju3dJgzCqBieQ.png" alt="Formas de pagamento aceitas: Visa, Mastercard, Maestro, Elo, Hipercard, Hiper, American Express, VR, Pix">
+                    </div>
+                </div>
+                
+                <!-- Suporte -->
+                <div class="support-section">
+                    <p class="support-title"><em>Estou com dúvidas, quero o suporte!</em></p>
+                    <a href="https://w.app/z4lcey" class="btn btn-primary">FALAR COM O SUPORTE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="assine">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20tela%202025-06-14%20150428-mcwolnrrO8lfRc8YM30RT9cI74oVFg.png" alt="Soucine TV" class="logo" style="margin-bottom: var(--space-4);">
+                    <p>A melhor experiência em streaming com qualidade premium e suporte humanizado.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <a href="#inicio">Início</a>
+                    <a href="#conteudos">Conteúdos</a>
+                    <a href="#planos">Planos</a>
+                    <a href="#vantagens">Vantagens</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Suporte</h3>
+                    <a href="https://w.app/z4lcey">WhatsApp</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Assine Agora</h3>
+                    <p>Entre em contato pelo WhatsApp e comece a assistir hoje mesmo!</p>
+                    <a href="https://w.app/z4lcey" class="btn btn-primary" style="margin-top: var(--space-4);">Falar no WhatsApp</a>
+                </div>
+            </div>
+            
+            <!-- Site Seguro Section -->
+            <div class="site-seguro">
+                <h3>SITE SEGURO</h3>
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NeowRCSTPh3VBHRpvvV277NL5kirVl.png" alt="Site Seguro - Google Site Seguro, SSL Verified, Site Blindado">
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Soucine TV - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://w.app/z4lcey" class="whatsapp-float" title="Falar no WhatsApp">📱</a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const header = document.getElementById('header');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Add click tracking for CTA buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', () => {
+                console.log('Button clicked:', button.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
+
+Perfeito! Agora a seção de planos está atualizada com:
+
+✅ **Novos preços**: R$34,90 (Mensal), R$79,90 (Trimestral), R$149,90 (Semestral), R$259,90 (Anual)
+✅ **Links do Kirvano**: Cada plano agora direciona para o checkout correspondente
+✅ **Plano Mensal em destaque**: Posicionado no meio com badge "Mais Popular"
+✅ **Ordem reorganizada**: Trimestral → **Mensal (destaque)** → Semestral → Anual
+
+Os valores na seção de comparação também foram ajustados para refletir o novo preço mensal de R$34,90! 🎯
+
